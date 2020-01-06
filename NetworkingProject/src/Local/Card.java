@@ -13,6 +13,15 @@ public class Card {
 	Card(int r, char s){
 		this._rank = r;
 		this._suit = s;
-		this._display = ; //this._display = this._rank + this._suit;	Separate between 1-10 to JQKA.
+		if (this._rank < 11)
+			this._display = Integer.toString(this._rank) + Character.toString(this._suit);
+		else if (this._rank == 11)
+			this._display = "J" + Character.toString(this._suit);
+		else if (this._rank == 12)
+			this._display = "Q" + Character.toString(this._suit);
+		else if (this._rank == 13)
+			this._display = "K" + Character.toString(this._suit);
+		else if (this._rank == 14)
+			this._display = "A" + Character.toString(this._suit);
 	}
 }
